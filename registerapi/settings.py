@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
+import datetime
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -41,9 +42,13 @@ INSTALLED_APPS = [
 
     #Local apps
     'accounts.apps.AccountsConfig',
-
+    'rest_framework_simplejwt.token_blacklist',
     'rest_framework',
 ]
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': datetime.timedelta(minutes=5),
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

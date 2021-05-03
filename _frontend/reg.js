@@ -34,40 +34,41 @@ sendRequest()
 // -------------------------------------------------------------------------------------
 
 
-let sub = document.getElementById("sub")
+// let sub = document.getElementById("sub")
 
 
-let postUrl = "http://127.0.0.1:8000/api/v1/register/"
-posted = (username, first_name, last_name, email, password, password2) => {
-    let iii = {
-        "username": username,
-        "first_name": first_name,
-        "last_name": last_name,
-        "email": email,
-        "password": password,
-        "password2": password2,
-    }
-    fetch(postUrl, {
-        method: "POST",
-        headers: {
-            "Content-type": "application/json"
-        },
-        body: JSON.stringify(iii)
-    }).then(resp => resp.json()).then(data => {
-        console.log(data);
-    })
+// let postUrl = "http://127.0.0.1:8000/api/v1/register/"
+// posted = (username, first_name, last_name, email, password, password2) => {
+//     let iii = {
+//         "username": username,
+//         "first_name": first_name,
+//         "last_name": last_name,
+//         "email": email,
+//         "password": password,
+//         "password2": password2,
+//     }
+//     fetch(postUrl, {
+//         method: "POST",
+//         headers: {
+//             "Content-type": "application/json"
+//         },
+//         body: JSON.stringify(iii)
+//     }).then(resp => resp.json()).then(data => {
+//         console.log(data);
+//     })
 
-}
+// }
 
-sub.addEventListener("submit", (e) => {
-    e.preventDefault()
-    let user = document.getElementById("user").value
-    let fname = document.getElementById("fname").value
-    let lname = document.getElementById("lname").value
-    let email = document.getElementById("email").value
-    let pass = document.getElementById("pass").value
-    let pass2 = document.getElementById("pass2").value
+// sub.addEventListener("submit", (e) => {
+//     e.preventDefault()
+//     let user = document.getElementById("user").value
+//     let fname = document.getElementById("fname").value
+//     let lname = document.getElementById("lname").value
+//     let email = document.getElementById("email").value
+//     let pass = document.getElementById("pass").value
+//     let file = document.getElementById("file").files[0]
+//     let pass2 = document.getElementById("pass2").value
 
-    posted(user, fname, lname, email, pass, pass2)
+//     posted(user, fname, lname, email, file, pass, pass2)
 
-})
+// })
